@@ -1,0 +1,18 @@
+{
+    "name": "kozo/mechanical",
+    "type": "cakephp-plugin",
+    "authors": [
+        {
+            "name": "kozo",
+            "email": "kozo.sakuragawa@gmail.com"
+        }
+    ],
+    "require": {
+        "kozo/watchmaker": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mechanical\\": "src/"
+        }
+    }
+}
