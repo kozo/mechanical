@@ -74,7 +74,7 @@ class MechanicalInstallCommand extends Command
     public function execute(Arguments $args, ConsoleIo $io)
     {
         $namespace = $args->getOption('namespace');
-        $className = $args->getOption('name');
+        $className = $args->getOption('class');
 
         $class = sprintf("%s\\%s", $namespace, $className);
         if (class_exists($class) === false) {
