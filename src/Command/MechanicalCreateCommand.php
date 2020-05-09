@@ -82,7 +82,6 @@ class MechanicalCreateCommand extends SimpleBakeCommand
 
         $name = Inflector::camelize($name);
         $this->bake($name, $args, $io);
-        $this->bakeTest($name, $args, $io);
 
         return static::CODE_SUCCESS;
     }

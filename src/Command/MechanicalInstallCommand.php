@@ -43,13 +43,15 @@ class MechanicalInstallCommand extends Command
         $parser = parent::buildOptionParser($parser);
 
         $parser
-            ->addOption('name', [
+            ->addOption('class', [
+                'short' => 'c',
                 'help' => 'class name',
-                'default' => 'QuartzCron'
+                'default' => 'MechanicalCron'
             ])
             ->addOption('namespace', [
+                'short' => 'n',
                 'help' => 'namespace',
-                'default' => '\App\Quartz'
+                'default' => '\App\Mechanical'
             ])
             ->addOption('ansi', [
                 'help' => 'ansi',
