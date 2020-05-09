@@ -43,13 +43,15 @@ class MechanicalShowCommand extends Command
         $parser = parent::buildOptionParser($parser);
 
         $parser
-            ->addOption('name', [
+            ->addOption('class', [
+                'short' => 'c',
                 'help' => 'class name',
-                'default' => 'QuartzCron'
+                'default' => 'MechanicalCron'
             ])
             ->addOption('namespace', [
+                'short' => 'n',
                 'help' => 'namespace',
-                'default' => '\App\Quartz'
+                'default' => '\App\Mechanical'
             ])
             ->addOption('ansi', [
                 'help' => 'ansi',
@@ -72,7 +74,7 @@ class MechanicalShowCommand extends Command
     public function execute(Arguments $args, ConsoleIo $io)
     {
         $namespace = $args->getOption('namespace');
-        $className = $args->getOption('name');
+        $className = $args->getOption('class');
 
         $class = sprintf("%s\\%s", $namespace, $className);
         if (class_exists($class) === false) {

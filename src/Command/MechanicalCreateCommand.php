@@ -18,7 +18,8 @@ class MechanicalCreateCommand extends SimpleBakeCommand
      *
      * @var string
      */
-    private const DEFAULT_CLASS_NAME = 'QuartzCron';
+    private const DEFAULT_CLASS_NAME = 'MechanicalCron';
+    private $fileName;
 
     /**
      * Task name used in path generation.
@@ -48,7 +49,7 @@ class MechanicalCreateCommand extends SimpleBakeCommand
      */
     public function fileName(string $name): string
     {
-        return $name . 'QuartzCron.php';
+        return $name . '.php';
     }
 
     /**
@@ -77,6 +78,8 @@ class MechanicalCreateCommand extends SimpleBakeCommand
             return null;
         }
         $name = $this->_getName($name);
+        $this->fileName = $name;
+
         $name = Inflector::camelize($name);
         $this->bake($name, $args, $io);
         $this->bakeTest($name, $args, $io);
