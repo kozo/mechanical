@@ -49,7 +49,7 @@ class InstallTask extends Shell
     /**
      * main() method.
      *
-     * @return bool|int|null Success or error code.
+     * @return void Success or error code.
      * @throws ClassNotFoundException
      */
     public function main()
