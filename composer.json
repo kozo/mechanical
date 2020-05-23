@@ -3,12 +3,12 @@
     "type": "cakephp-plugin",
     "authors": [
         {
-            "name": "kozo",
-            "email": "kozo.sakuragawa@gmail.com"
+            "name": "kozo"
         }
     ],
     "require": {
-        "kozo/watchmaker": "dev-master"
+        "kozo/watchmaker": "0.1.0",
+        "cakephp/cakephp": "^3.0"
     },
     "autoload": {
         "psr-4": {
