@@ -13,7 +13,11 @@ use Cake\Core\Plugin;
  */
 class MechanicalShell extends Shell
 {
-    public $tasks = ['Mechanical.Create'];
+    public $tasks = [
+        'Mechanical.Create',
+        'Mechanical.Show',
+        'Mechanical.Install'
+    ];
 
     public function startup()
     {
@@ -84,6 +88,14 @@ class MechanicalShell extends Shell
         $parser->addSubcommand('create', [
             'help' => 'Execute The Sound Task.',
             'parser' => $this->Create->getOptionParser(),
+        ]);
+        $parser->addSubcommand('show', [
+            'help' => 'Execute The Sound Task.',
+            'parser' => $this->Show->getOptionParser(),
+        ]);
+        $parser->addSubcommand('install', [
+            'help' => 'Execute The Sound Task.',
+            'parser' => $this->Install->getOptionParser(),
         ]);
 
 
