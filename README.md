@@ -3,7 +3,6 @@
 ## requirements
 
 - CakePHP3.8 or higher
-- 
 
 ## Installation
 
