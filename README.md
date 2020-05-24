@@ -1,7 +1,14 @@
 # mechanical
 
+## requirements
+
+- CakePHP3.8 or higher
+- 
+
+## Installation
+
 ```
-composer require mechanical
+composer require mechanical:"~3.0"
 ```
 
 ## create quartz file.
