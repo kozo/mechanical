@@ -1,5 +1,11 @@
 # mechanical
 
+## requirements
+
+- CakePHP4.0 or higher
+
+## Installation
+
 ```
 composer require mechanical
 ```
