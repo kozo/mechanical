@@ -7,12 +7,12 @@
 ## Installation
 
 ```
-composer require mechanical
+composer require kozo/mechanical
 ```
 
 ## create quartz file.
 ```
-php bin/cakephp mechanical create
+php bin/cake.php mechanical create
 ```
 
 ## edit mechanical file.
@@ -53,12 +53,12 @@ class MechanicalCron {
 show the difference between "crontab" and "Quartz".
 
 ```
-php bin/cakephp mechanical show
+php bin/cake.php mechanical show
 ```
 
 ### install
 Install the difference between "crontab" and "Quartz".
 
 ```
-php bin/cakephp mechanical install
+php bin/cake.php mechanical install
 ```
