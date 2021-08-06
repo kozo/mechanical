@@ -33,7 +33,7 @@ class MechanicalCreateCommand extends SimpleBakeCommand
      */
     public static function defaultName(): string
     {
-        return 'create';
+        return 'mechanical create';
     }
 
     /**
