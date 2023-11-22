@@ -7,11 +7,6 @@ use Cake\Command\Command;
 use Cake\Console\Arguments;
 use Cake\Console\ConsoleIo;
 use Cake\Console\ConsoleOptionParser;
-// use Cake\Event\Event;
-// use Cake\Event\EventManager;
-// use Migrations\Command\MigrationsDumpCommand;
-// use Symfony\Component\Console\Input\InputArgument;
-// use Symfony\Component\Console\Input\InputOption;
 
 /**
  * Mechanical command.
