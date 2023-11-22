@@ -3,15 +3,11 @@ declare(strict_types=1);
 
 namespace Mechanical\Command;
 
-use Cake\Console\Arguments;
 use Cake\Command\Command;
+use Cake\Console\Arguments;
 use Cake\Console\ConsoleIo;
 use Cake\Console\ConsoleOptionParser;
-use Cake\Event\Event;
-use Cake\Event\EventManager;
-use Migrations\Command\MigrationsDumpCommand;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputOption;
+use Exception;
 use Watchmaker\Config;
 use Watchmaker\error\ClassNotFoundException;
 use Watchmaker\Watchmaker;
@@ -21,7 +17,6 @@ use Watchmaker\Watchmaker;
  */
 class MechanicalInstallCommand extends Command
 {
-
     /**
      * @inheritDoc
      */
@@ -34,7 +29,6 @@ class MechanicalInstallCommand extends Command
      * Hook method for defining this command's option parser.
      *
      * @see https://book.cakephp.org/3.0/en/console-and-shells/commands.html#defining-arguments-and-options
-     *
      * @param \Cake\Console\ConsoleOptionParser $parser The parser to be defined
      * @return \Cake\Console\ConsoleOptionParser The built parser.
      */
@@ -46,19 +40,18 @@ class MechanicalInstallCommand extends Command
             ->addOption('class', [
                 'short' => 'c',
                 'help' => 'class name',
-                'default' => 'MechanicalCron'
+                'default' => 'MechanicalCron',
             ])
             ->addOption('namespace', [
                 'short' => 'n',
                 'help' => 'namespace',
-                'default' => '\App\Mechanical'
+                'default' => '\App\Mechanical',
             ])
             ->addOption('ansi', [
                 'help' => 'ansi',
                 'default' => false,
-                'boolean' => true
-            ])
-        ;
+                'boolean' => true,
+            ]);
 
         return $parser;
     }
@@ -68,15 +61,15 @@ class MechanicalInstallCommand extends Command
      *
      * @param \Cake\Console\Arguments $args The command arguments.
      * @param \Cake\Console\ConsoleIo $io The console io
-     * @return null|void|int The exit code or null for success
-     * @throws ClassNotFoundException
+     * @return void
+     * @throws \Watchmaker\error\ClassNotFoundException
      */
-    public function execute(Arguments $args, ConsoleIo $io)
+    public function execute(Arguments $args, ConsoleIo $io): void
     {
         $namespace = $args->getOption('namespace');
         $className = $args->getOption('class');
 
-        $class = sprintf("%s\\%s", $namespace, $className);
+        $class = sprintf('%s\\%s', $namespace, $className);
         if (class_exists($class) === false) {
             throw new ClassNotFoundException();
         }
@@ -95,7 +88,7 @@ class MechanicalInstallCommand extends Command
                 $text = $watchmaker->install();
 
                 $io->out($text);
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 $io->error($e->getMessage());
             }
         }

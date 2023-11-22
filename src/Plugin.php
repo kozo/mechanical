@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Mechanical;
 
@@ -11,6 +12,10 @@ use Mechanical\Command\MechanicalShowCommand;
 
 class Plugin extends BasePlugin
 {
+    /**
+     * @param \Cake\Console\CommandCollection $commands
+     * @return \Cake\Console\CommandCollection
+     */
     public function console(CommandCollection $commands): CommandCollection
     {
         $commands->add('mechanical', MechanicalCommand::class);

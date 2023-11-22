@@ -2,7 +2,7 @@
 
 ## requirements
 
-- CakePHP4.0 or higher
+- CakePHP5.0 or higher
 
 ## Installation
 
@@ -11,6 +11,7 @@ composer require kozo/mechanical
 ```
 
 ## create quartz file.
+
 ```
 php bin/cake.php mechanical create
 ```
@@ -18,6 +19,7 @@ php bin/cake.php mechanical create
 ## edit mechanical file.
 
 app/Quartz/MechanicalCron.php
+
 ```
 // sample
 <?php

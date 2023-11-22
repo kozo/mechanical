@@ -19,14 +19,14 @@ class MechanicalCreateCommand extends SimpleBakeCommand
      * @var string
      */
     private const DEFAULT_CLASS_NAME = 'MechanicalCron';
-    private $fileName;
+    private string $fileName;
 
     /**
      * Task name used in path generation.
      *
      * @var string
      */
-    public $pathFragment = 'Mechanical/';
+    public string $pathFragment = 'Mechanical/';
 
     /**
      * @inheritDoc
