@@ -81,7 +81,7 @@ class MechanicalInstallCommand extends Command
         $quarts = new $class();
         $watchmaker = $quarts->handle($watchmaker);
 
-        // @todo : previewをする
+        // @todo : preview
 
         if ($args->getOption('quiet') === true || $io->ask('Do you want to install? (yes/no)', 'no') === 'yes') {
             try {

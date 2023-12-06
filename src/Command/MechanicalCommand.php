@@ -69,8 +69,8 @@ class MechanicalCommand extends Command
      */
     public function execute(Arguments $args, ConsoleIo $io): void
     {
-        // ここでヘルプを出したい
-        // Migrationsを参考に getAppが関係してる.Applicationからプラグインを追加してる
+        // @todo : output help
+        // Referring to Migrations, getApp is involved.Plugins are added from Application.
         echo 'aaa';
         //$dumpExitCode = $this->executeCommand(MechanicalCommand::class, [], $io);
     }
